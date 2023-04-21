@@ -9,6 +9,49 @@
     <title>Library</title>
 </head>
 <body>
-    <button id="thisButton">click me</button>
+    <div id="container">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="formContainer">
+            <form class="bookingForm" id="addBookLibrary" method="post">
+                <div>
+                    <label for="bookAuthor">Author</label>
+                    <input type="text" id="bookAuthor" name="bookAuthor" placeholder="Author..." required>
+                </div>
+                <div>
+                    <label for="bookTitle">Title</label>
+                    <input type="text" id="bookTitle" name="bookTitle" placeholder="Title..." required>
+                </div>
+                <div>
+                    <label for="bookPages">Pages</label>
+                    <input type="number" id="bookPages" name="bookPages" value="0" required>
+                </div>
+                <div>
+                    <input type="checkbox" id="bookRead" name="bookRead">
+                    <label for="bookRead">Book Read?</label>
+                </div>
+                <div>
+                    <button type="submit" data-submit>Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
