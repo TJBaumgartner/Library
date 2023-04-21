@@ -4,3 +4,13 @@
 .formDisplay{
     display: block;
 }
+#cardGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-content: space-between;
+}
+.card{
+    background-color: red;
+    padding: 20px;
+    margin: 20px;
+}

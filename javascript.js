@@ -1,7 +1,8 @@
 const submitButton = document.querySelector('[data-submit]');
 const displayFormButton = document.getElementById('showForm');
-
+const cardGrid = document.getElementById('cardGrid');
 const formContainer = document.getElementById('formContainer');
+
 displayFormButton.addEventListener('click', displayForm);
 function displayForm() {
     formContainer.classList.remove('formHide');
@@ -43,6 +44,7 @@ function addBookToLibrary(e) {
     }
     let newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
+    newBookCard(newBook);
     console.log(myLibrary[1]);
     console.log(myLibrary[2]);
     e.preventDefault();
@@ -52,7 +54,17 @@ function addBookToLibrary(e) {
 function resetForm() {
     document.querySelector('#bookTitle').value = '';
     document.querySelector('#bookAuthor').value = '';
-    document.querySelector('#bookPages').value = 0;
+    document.querySelector('#bookPages').value = null;
     document.querySelector('#bookRead').checked = false;
 }
-
+function newBookCard(book) {
+    let newCard = document.createElement('div');
+    newCard.className = 'card';
+    let titleCard = document.createElement('h2');
+    let authorCard = document.createElement('h2');
+    titleCard.textContent = book.title;
+    authorCard.textContent = book.author;
+    newCard.appendChild(authorCard);
+    newCard.appendChild(titleCard);
+    cardGrid.appendChild(newCard);
+}
