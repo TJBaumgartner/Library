@@ -1,4 +1,14 @@
 const submitButton = document.querySelector('[data-submit]');
+const displayFormButton = document.getElementById('showForm');
+
+const formContainer = document.getElementById('formContainer');
+displayFormButton.addEventListener('click', displayForm);
+function displayForm() {
+    formContainer.classList.remove('formHide');
+}
+function hideForm() {
+    formContainer.classList.add('formHide');
+}
 //Book Constructor
 function Book(title, author, pages, read) {
     this.title = title;
@@ -17,7 +27,7 @@ let myLibrary = [
 ];
 submitButton.addEventListener('click', addBookToLibrary);
 function addBookToLibrary(e) {
-    e.preventDefault();
+    
     let title = document.querySelector('#bookTitle').value;
     let author = document.querySelector('#bookAuthor').value;
     let pages = document.querySelector('#bookPages').value;
@@ -28,11 +38,16 @@ function addBookToLibrary(e) {
     if(document.querySelector('#bookRead').checked == true){
         read = true;
     }
+    if(title == '' || author == ''){
+        return;
+    }
     let newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
     console.log(myLibrary[1]);
     console.log(myLibrary[2]);
+    e.preventDefault();
     resetForm();
+    hideForm();
 }
 function resetForm() {
     document.querySelector('#bookTitle').value = '';
