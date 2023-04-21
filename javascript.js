@@ -6,9 +6,11 @@ const formContainer = document.getElementById('formContainer');
 displayFormButton.addEventListener('click', displayForm);
 function displayForm() {
     formContainer.classList.remove('formHide');
+    //displayFormButton.classList.add('formHide');
 }
 function hideForm() {
     formContainer.classList.add('formHide');
+    //displayFormButton.classList.remove('formHide');
 }
 //Book Constructor
 function Book(title, author, pages, read) {
@@ -45,8 +47,6 @@ function addBookToLibrary(e) {
     let newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
     newBookCard(newBook);
-    console.log(myLibrary[1]);
-    console.log(myLibrary[2]);
     e.preventDefault();
     resetForm();
     hideForm();

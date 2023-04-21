@@ -10,47 +10,34 @@
 </head>
 <body>
     <div id="container">
-        <button id="showForm">Click me to display form</button>
-        <div id="cardGrid"></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <div id="formContainer" class="formHide">
-            <form class="bookingForm" id="addBookLibrary" method="post">
-                <div>
-                    <label for="bookAuthor">Author</label>
-                    <input type="text" id="bookAuthor" name="bookAuthor" placeholder="Author" required>
-                </div>
-                <div>
-                    <label for="bookTitle">Title</label>
-                    <input type="text" id="bookTitle" name="bookTitle" placeholder="Title" required>
-                </div>
-                <div>
-                    <label for="bookPages">Pages</label>
-                    <input type="number" id="bookPages" name="bookPages" placeholder="Pages" required>
-                </div>
-                <div>
-                    <input type="checkbox" id="bookRead" name="bookRead">
-                    <label for="bookRead">Book Read?</label>
-                </div>
-                <div>
-                    <button type="submit" data-submit>Submit</button>
-                </div>
-            </form>
+        <div id="header">
+            <h1>Virtual Library</h1>
+        </div>
+        <div id="libraryBody">
+            <div id="buttonContainer">
+                <button id="showForm">+ Add Book</button>
+            </div> 
+            <div id="cardGrid"></div>
+            <div id="formContainer" class="formHide">
+                <form class="bookingForm" id="addBookLibrary" method="post">
+                    <div>
+                        <input type="text" id="bookAuthor" name="bookAuthor" placeholder="Author" required>
+                    </div>
+                    <div>
+                        <input type="text" id="bookTitle" name="bookTitle" placeholder="Title" required>
+                    </div>
+                    <div>
+                        <input type="number" id="bookPages" name="bookPages" placeholder="Pages" required>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="bookRead" name="bookRead">
+                        <label for="bookRead">Book Read?</label>
+                    </div>
+                    <div>
+                        <button type="submit" data-submit>Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </body>
