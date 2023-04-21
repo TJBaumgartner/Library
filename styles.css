@@ -21,7 +21,7 @@ body{
     line-height: 100px;
 }
 #libraryBody{
-    background-color: #b4b4b4;
+    background-color: #646464;
     height: 700px;
     width: 100%;
 }
@@ -34,9 +34,11 @@ body{
     position: fixed;
     z-index: 1;
     top: 40%;
-    left: 40%;
-    background-color: red;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #838383;
     border-radius: 10px;
+    width: 300px;
 }
 .formHide{
     display: none;
@@ -62,15 +64,36 @@ body{
     padding: 20px;
 }
 input {
+    background-color: #646464;
     border: 1px solid rgb(192, 191, 191);
     border-radius: 5px;
-    padding-right: 100px;
+    padding-right: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 1.2rem;
+    color: white;
+    padding-left: 10px;
+}
+input::placeholder{
+    color: white;
+}
+label{
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+}
+label[for="bookRead"]{
+    padding-left: 20px;
+}
+.checkbox{
+    width: 20px;
+    height: 20px;
+    margin-top: 4px;
+    color: white;
+    accent-color: gray;
 }
 #showForm{
-    background-color: #bfdbfe;
+    background-color: #838383;
     color: white;
     padding: 10px 30px 10px 30px;
     border: none;
