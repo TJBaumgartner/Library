@@ -3,6 +3,7 @@ const displayFormButton = document.getElementById('showForm');
 const cardGrid = document.getElementById('cardGrid');
 const formContainer = document.getElementById('formContainer');
 
+
 displayFormButton.addEventListener('click', displayForm);
 function displayForm() {
     formContainer.classList.remove('formHide');
@@ -62,9 +63,37 @@ function newBookCard(book) {
     newCard.className = 'card';
     let titleCard = document.createElement('h2');
     let authorCard = document.createElement('h2');
+    let pagesCard = document.createElement('h2');
+    let readCard = document.createElement('button');
+    readCard.textContent = 'Read';
+    readCard.className = 'readButton';
+    if(book.read == true){
+        readCard.classList.add('readButtonTrue')
+    }
+    if(book.read == false){
+        readCard.classList.add('readButtonFalse')
+    }
+    readCard.addEventListener('click', changeIfRead);
     titleCard.textContent = book.title;
     authorCard.textContent = book.author;
+    pagesCard.textContent = book.pages + ' Pages';
     newCard.appendChild(authorCard);
     newCard.appendChild(titleCard);
+    newCard.appendChild(pagesCard);
+    newCard.appendChild(readCard);
     cardGrid.appendChild(newCard);
+}
+function changeIfRead() {
+    if(this.classList.contains('readButtonTrue') == true){
+        this.classList.remove('readButtonTrue');
+        this.classList.add('readButtonFalse');
+        this.textContent = 'Not Read'
+        return;
+    }
+    if(this.classList.contains('readButtonFalse') == true){
+        this.classList.remove('readButtonFalse');
+        this.classList.add('readButtonTrue');
+        this.textContent = 'Read'
+        return;
+    }
 }
