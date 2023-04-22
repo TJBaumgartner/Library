@@ -78,11 +78,11 @@ function newBookCard(book) {
         readCard.classList.add('readButtonFalse')
     }
     readCard.addEventListener('click', changeIfRead);
-    titleCard.textContent = book.title;
+    titleCard.textContent = '"' + book.title + '"';
     authorCard.textContent = book.author;
     pagesCard.textContent = book.pages + ' Pages';
-    newCard.appendChild(authorCard);
     newCard.appendChild(titleCard);
+    newCard.appendChild(authorCard);
     newCard.appendChild(pagesCard);
     newCard.appendChild(readCard);
     newCard.appendChild(removeButton);
