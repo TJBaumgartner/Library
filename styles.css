@@ -51,16 +51,17 @@ body{
     padding-top: 100px;
 }
 .card{
-    background-color: red;
+    background-color: #265bce;
     padding: 20px;
     margin: 20px;
+    border-radius: 10px;
 }
 #formContainer form{
     margin: auto;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 1fr);
-    gap: 20px;
+    gap: 10px;
     padding: 20px;
 }
 input {
@@ -102,4 +103,28 @@ label[for="bookRead"]{
     position: absolute;
     left: 50%;
     transform: translate(-50%);
+}
+#showForm:hover{
+    background-color: #505050;
+    transition: 0.25s ease-in-out;
+}
+#submitContainer{
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+}
+button[type="submit"]{
+    margin-top: 0px;
+    font-size: 1.5rem;
+    color: white;
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+    background-color: #265bce;
+    border-radius: 10px;
+    font-weight: 700;
+    border: none;
+}
+button[type="submit"]:hover{
+    background-color: #1a4091;
+    transition: 0.25s ease-in-out;
 }
