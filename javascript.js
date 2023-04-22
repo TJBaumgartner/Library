@@ -31,26 +31,27 @@ let myLibrary = [
 ];
 submitButton.addEventListener('click', addBookToLibrary);
 function addBookToLibrary(e) {
-    
     let title = document.querySelector('#bookTitle').value;
     let author = document.querySelector('#bookAuthor').value;
     let pages = document.querySelector('#bookPages').value;
     let read = document.querySelector('#bookRead').value;
+    let hasNumber = /\d/;
     if(document.querySelector('#bookRead').checked == false){
         read = false;
     }
     if(document.querySelector('#bookRead').checked == true){
         read = true;
     }
-    if(title == '' || author == ''){
+    if(title == '' || author == ''|| pages == '' || hasNumber.test(author) == true){
         return;
     }
     let newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
     newBookCard(newBook);
-    e.preventDefault();
+
     resetForm();
     hideForm();
+    e.preventDefault();
 }
 function resetForm() {
     document.querySelector('#bookTitle').value = '';
