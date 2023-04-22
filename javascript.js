@@ -65,8 +65,11 @@ function newBookCard(book) {
     let authorCard = document.createElement('h2');
     let pagesCard = document.createElement('h2');
     let readCard = document.createElement('button');
+    let removeButton = document.createElement('button');
     readCard.textContent = 'Read';
     readCard.className = 'readButton';
+    removeButton.textContent = 'Remove';
+    removeButton.className = 'removeButton';
     if(book.read == true){
         readCard.classList.add('readButtonTrue')
     }
@@ -81,7 +84,9 @@ function newBookCard(book) {
     newCard.appendChild(titleCard);
     newCard.appendChild(pagesCard);
     newCard.appendChild(readCard);
-    cardGrid.appendChild(newCard);
+    newCard.appendChild(removeButton);
+    cardGrid.appendChild(newCard); 
+    removeButton.addEventListener('click', removeCard);
 }
 function changeIfRead() {
     if(this.classList.contains('readButtonTrue') == true){
@@ -96,4 +101,7 @@ function changeIfRead() {
         this.textContent = 'Read'
         return;
     }
+}
+function removeCard() {
+    this.parentNode.remove();
 }
